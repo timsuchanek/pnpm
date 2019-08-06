@@ -5,7 +5,7 @@
 > Fast, disk space efficient package manager
 
 [![npm version](https://img.shields.io/npm/v/pnpm.svg)](https://www.npmjs.com/package/pnpm)
-[![Status](https://travis-ci.org/pnpm/pnpm.svg?branch=master)](https://travis-ci.org/pnpm/pnpm "See test builds")
+[![Build Status](https://dev.azure.com/pnpm/pnpm/_apis/build/status/pnpm.pnpm?branchName=master)](https://dev.azure.com/pnpm/pnpm/_build/latest?definitionId=1&branchName=master)
 [![Windows build status](https://ci.appveyor.com/api/projects/status/f7437jbcml04x750/branch/master?svg=true)](https://ci.appveyor.com/project/zkochan/pnpm-17nv8/branch/master)
 [![Join the chat at https://gitter.im/pnpm/pnpm](https://badges.gitter.im/pnpm/pnpm.svg)](https://gitter.im/pnpm/pnpm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![OpenCollective](https://opencollective.com/pnpm/backers/badge.svg)](#backers)

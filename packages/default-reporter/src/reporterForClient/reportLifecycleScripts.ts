@@ -184,7 +184,7 @@ function formatIndentedStatus (status: string) {
 
 function highlightLastFolder (p: string) {
   const lastSlash = p.lastIndexOf('/') + 1
-  return `${chalk.gray(p.substr(0, lastSlash))}${p.substr(lastSlash)}`
+  return `${chalk.dim(p.substr(0, lastSlash))}${p.substr(lastSlash)}`
 }
 
 const ANSI_ESCAPES_LENGTH_OF_PREFIX = hlValue(' ').length - 1
@@ -221,7 +221,7 @@ function formatLine (maxWidth: number, logObj: LifecycleLog) {
 
   // TODO: strip only the non-color/style ansi escape codes
   if (logObj['stdio'] === 'stderr') {
-    return chalk.gray(line)
+    return chalk.dim(line)
   }
   return line
 }

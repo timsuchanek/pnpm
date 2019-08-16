@@ -28,7 +28,7 @@ import './reportingScope'
 const WARN = chalk.bgYellow.black('\u2009WARN\u2009')
 const ERROR = chalk.bgRed.black('\u2009ERROR\u2009')
 const DEPRECATED = chalk.red('deprecated')
-const versionColor = chalk.grey
+const versionColor = chalk.dim
 const ADD = chalk.green('+')
 const SUB = chalk.red('-')
 const h1 = chalk.cyanBright
@@ -197,7 +197,7 @@ test('prints summary (of current package only)', t => {
         ${ADD} winston <- winst0n ${versionColor('1.0.0')}
 
         ${h1('optionalDependencies:')}
-        ${ADD} is-linked ${chalk.grey(`<- ${path.relative(prefix, '/src/is-linked')}`)}
+        ${ADD} is-linked ${chalk.dim(`<- ${path.relative(prefix, '/src/is-linked')}`)}
         ${SUB} is-positive
         ${ADD} lala ${versionColor('1.1.0')}
 
@@ -207,7 +207,7 @@ test('prints summary (of current package only)', t => {
         ${ADD} qar ${versionColor('2.0.0')}
 
         ${h1('node_modules:')}
-        ${ADD} is-linked2 ${chalk.grey(`<- ${path.relative(prefix, '/src/is-linked2')}`)}
+        ${ADD} is-linked2 ${chalk.dim(`<- ${path.relative(prefix, '/src/is-linked2')}`)}
         ` + '\n')
     },
   })

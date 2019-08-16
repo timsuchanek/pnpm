@@ -412,10 +412,10 @@ test('collapses lifecycle output of packages from node_modules', t => {
     error: t.end,
     next: (output: string) => {
       t.equal(replaceTimeWith1Sec(output), stripIndents`
-        ${chalk.gray('node_modules/.registry.npmjs.org/foo/1.0.0/node_modules/')}foo: Running preinstall script...
-        ${chalk.gray('node_modules/.registry.npmjs.org/foo/1.0.0/node_modules/')}foo: Running postinstall script, done in 1s
-        ${chalk.gray('node_modules/.registry.npmjs.org/bar/1.0.0/node_modules/')}bar: Running postinstall script...
-        ${chalk.gray('node_modules/.registry.npmjs.org/qar/1.0.0/node_modules/')}qar: Running install script, done in 1s
+        ${chalk.dim('node_modules/.registry.npmjs.org/foo/1.0.0/node_modules/')}foo: Running preinstall script...
+        ${chalk.dim('node_modules/.registry.npmjs.org/foo/1.0.0/node_modules/')}foo: Running postinstall script, done in 1s
+        ${chalk.dim('node_modules/.registry.npmjs.org/bar/1.0.0/node_modules/')}bar: Running postinstall script...
+        ${chalk.dim('node_modules/.registry.npmjs.org/qar/1.0.0/node_modules/')}qar: Running install script, done in 1s
       `)
     },
   })
@@ -459,7 +459,7 @@ test('output of failed optional dependency is not shown', t => {
     error: t.end,
     next: (output: string) => {
       t.equal(replaceTimeWith1Sec(output), stripIndents`
-        ${chalk.gray('node_modules/.registry.npmjs.org/foo/1.0.0/node_modules/')}foo: Running install script, failed in 1s (skipped as optional)
+        ${chalk.dim('node_modules/.registry.npmjs.org/foo/1.0.0/node_modules/')}foo: Running install script, failed in 1s (skipped as optional)
       `)
     },
   })
@@ -503,7 +503,7 @@ test('output of failed non-optional dependency is printed', t => {
     error: t.end,
     next: (output: string) => {
       t.equal(replaceTimeWith1Sec(output), stripIndents`
-        ${chalk.gray('node_modules/.registry.npmjs.org/foo/1.0.0/node_modules/')}foo: Running install script, failed in 1s
+        ${chalk.dim('node_modules/.registry.npmjs.org/foo/1.0.0/node_modules/')}foo: Running install script, failed in 1s
         .../foo/1.0.0/node_modules/foo ${INSTALL}$ node foo
         ${OUTPUT_INDENTATION} foo 0 1 2 3 4 5 6 7 8 9
         ${STATUS_INDENTATION} ${STATUS_FAILED}
@@ -556,7 +556,7 @@ test['skip']('prints lifecycle progress', t => {
 
   t.plan(1)
 
-  const childOutputColor = chalk.grey
+  const childOutputColor = chalk.dim
   const childOutputError = chalk.red
 
   output$.skip(3).take(1).map(normalizeNewline).subscribe({

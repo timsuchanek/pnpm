@@ -11,7 +11,7 @@ const DEV_DEP_ONLY_CLR = chalk.yellow
 const PROD_DEP_CLR = (s: string) => s // just use the default color
 const OPTIONAL_DEP_CLR = chalk.blue
 const NOT_SAVED_DEP_CLR = chalk.red
-const VERSION_CLR = chalk.gray
+const VERSION_CLR = chalk.dim
 
 const LEGEND = `Legend: ${PROD_DEP_CLR('production dependency')}, ${OPTIONAL_DEP_CLR('optional only')}, ${DEV_DEP_ONLY_CLR('dev only')}`
 const DEPENDENCIES = chalk.cyanBright('dependencies:')

@@ -15,7 +15,7 @@ StackTracey.maxColumnWidths = {
 const stripIndent = commonTags.stripIndent
 const stripIndents = commonTags.stripIndents
 const highlight = chalk.yellow
-const colorPath = chalk.gray
+const colorPath = chalk.dim
 
 export default function reportError (logObj: Log) {
   if (logObj['err']) {

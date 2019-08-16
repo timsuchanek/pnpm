@@ -84,16 +84,16 @@ function printDiffs (
       result += ` ${pkg.name} <- ${pkg.realName}`
     }
     if (pkg.version) {
-      result += ` ${chalk.grey(pkg.version)}`
+      result += ` ${chalk.dim(pkg.version)}`
       if (pkg.latest && semver.lt(pkg.version, pkg.latest)) {
-        result += ` ${chalk.grey(`(${pkg.latest} is available)`)}`
+        result += ` ${chalk.dim(`(${pkg.latest} is available)`)}`
       }
     }
     if (pkg.deprecated) {
       result += ` ${chalk.red('deprecated')}`
     }
     if (pkg.from) {
-      result += ` ${chalk.grey(`<- ${pkg.from && path.relative(opts.prefix, pkg.from) || '???'}`)}`
+      result += ` ${chalk.dim(`<- ${pkg.from && path.relative(opts.prefix, pkg.from) || '???'}`)}`
     }
     return result
   }).join(EOL)

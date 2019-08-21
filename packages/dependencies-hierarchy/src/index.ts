@@ -161,6 +161,7 @@ async function dependenciesHierarchyForPackage (
   const wantedLockfile = await readWantedLockfile(opts.lockfileDirectory, { ignoreIncompatible: false }) || { packages: {} }
 
   const getChildrenTree = getTree.bind(null, {
+    cache: new Map(),
     currentDepth: 1,
     currentPackages: currentLockfile.packages || {},
     includeOptionalDependencies: opts.include.optionalDependencies === true,
@@ -267,10 +268,17 @@ function getTree (
     registries: Registries,
     currentPackages: PackageSnapshots,
     wantedPackages: PackageSnapshots,
+    cache: Map<string, { depth: number, nodes: PackageNode[] }>,
   },
   keypath: string[],
   parentId: string,
 ): PackageNode[] {
+  {
+    const fromCache = opts.cache.get(parentId)
+    if (fromCache && fromCache.depth <= opts.currentDepth && !keypath.includes(parentId)) {
+      return fromCache.nodes
+    }
+  }
   if (opts.currentDepth > opts.maxDepth || !opts.currentPackages || !opts.currentPackages[parentId]) return []
 
   const deps = opts.includeOptionalDependencies === false
@@ -330,6 +338,12 @@ function getTree (
       result.push(newEntry)
     }
   })
+  {
+    const fromCache = opts.cache.get(parentId)
+    if (!fromCache || fromCache.depth > opts.currentDepth) {
+      opts.cache.set(parentId, { depth: opts.currentDepth, nodes: result })
+    }
+  }
   return result
 }
 

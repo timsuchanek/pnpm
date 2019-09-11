@@ -278,6 +278,9 @@ function resolvePeersOfChildren (
   for (const childNodeId of R.values(children)) {
     Object.assign(allResolvedPeers, resolvePeersOfNode(childNodeId, parentPkgs, ctx))
   }
+  for (const childNodeId of R.values(children)) {
+    delete ctx.dependenciesTree[childNodeId]
+  }
 
   const unknownResolvedPeersOfChildren = R.keys(allResolvedPeers)
     .filter((alias) => !children[alias])

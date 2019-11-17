@@ -1,5 +1,5 @@
+import * as cliAudit from '@pnpm/cli-audit'
 import * as add from './add'
-import * as audit from './audit'
 import createHelp from './help'
 import * as importCmd from './import'
 import * as install from './install'
@@ -27,7 +27,7 @@ import * as why from './why'
 
 const commands: Array<{ commandNames: string[], handler: Function, help: () => string, types: () => Object}> = [
   add,
-  audit,
+  cliAudit,
   importCmd,
   install,
   installTest,

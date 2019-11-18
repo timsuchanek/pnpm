@@ -1,7 +1,7 @@
 {
   "name": "@pnpm/cli-audit",
   "version": "0.0.0",
-  "description": "Utils for pnpm commands",
+  "description": "The audit command of pnpm",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [

@@ -1,6 +1,6 @@
 # @pnpm/cli-audit
 
-> Utils for pnpm commands
+> The audit command of pnpm
 
 [![npm version](https://img.shields.io/npm/v/@pnpm/cli-audit.svg)](https://www.npmjs.com/package/@pnpm/cli-audit)
 

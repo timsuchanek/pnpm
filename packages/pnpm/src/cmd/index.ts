@@ -1,4 +1,5 @@
 import * as audit from '@pnpm/cli-audit'
+import { list, why } from '@pnpm/cli-list-and-why'
 import * as outdated from '@pnpm/cli-outdated'
 import { pack, publish } from '@pnpm/cli-pack-and-publish'
 import * as add from './add'
@@ -7,7 +8,6 @@ import * as importCmd from './import'
 import * as install from './install'
 import * as installTest from './installTest'
 import * as link from './link'
-import * as list from './list'
 import * as prune from './prune'
 import * as rebuild from './rebuild'
 import * as recursive from './recursive'
@@ -22,7 +22,6 @@ import * as store from './store'
 import * as test from './test'
 import * as unlink from './unlink'
 import * as update from './update'
-import * as why from './why'
 
 const commands: Array<{ commandNames: string[], handler: Function, help: () => string, types: () => Object}> = [
   add,

@@ -22,6 +22,7 @@
   ],
   "dependencies": {
     "@pnpm/cli-audit": "workspace:0.0.0",
+    "@pnpm/cli-list-and-why": "workspace:0.0.0",
     "@pnpm/cli-outdated": "workspace:0.0.0",
     "@pnpm/cli-pack-and-publish": "workspace:0.0.0",
     "@pnpm/cli-utils": "workspace:0.0.0",
@@ -35,7 +36,6 @@
     "@pnpm/error": "workspace:1.0.0",
     "@pnpm/file-reporter": "0.1.0",
     "@pnpm/lifecycle": "workspace:8.0.0",
-    "@pnpm/list": "workspace:4.0.4",
     "@pnpm/lockfile-file": "workspace:3.0.1",
     "@pnpm/logger": "3.1.0",
     "@pnpm/matcher": "workspace:1.0.0",

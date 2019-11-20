@@ -134,6 +134,50 @@ importers:
       strip-ansi: 6.0.0
       table: 5.4.6
       tape: 4.11.0
+  packages/cli-list-and-why:
+    dependencies:
+      '@pnpm/cli-utils': 'link:../cli-utils'
+      '@pnpm/common-cli-options-help': 'link:../common-cli-options-help'
+      '@pnpm/config': 'link:../config'
+      '@pnpm/error': 'link:../error'
+      '@pnpm/list': 'link:../list'
+      common-tags: 1.8.0
+      ramda: 0.26.1
+      render-help: 0.0.0
+    devDependencies:
+      '@pnpm/cli-list-and-why': 'link:'
+      '@pnpm/constants': 'link:../constants'
+      '@pnpm/prepare': 'link:../../privatePackages/prepare'
+      '@types/common-tags': 1.8.0
+      '@types/mz': 0.0.32
+      '@types/ramda': 0.26.36
+      execa: 3.3.0
+      mz: 2.7.0
+      rimraf: 3.0.0
+      strip-ansi: 6.0.0
+      tape: 4.11.0
+      write-yaml-file: 3.0.1
+    specifiers:
+      '@pnpm/cli-list-and-why': 'link:'
+      '@pnpm/cli-utils': 'workspace:0.0.0'
+      '@pnpm/common-cli-options-help': 'workspace:0.0.0'
+      '@pnpm/config': 'workspace:5.0.2'
+      '@pnpm/constants': 'workspace:3.0.0'
+      '@pnpm/error': 'workspace:1.0.0'
+      '@pnpm/list': 'workspace:4.0.4'
+      '@pnpm/prepare': 'workspace:0.0.0'
+      '@types/common-tags': 1.8.0
+      '@types/mz': 0.0.32
+      '@types/ramda': ^0.26.36
+      common-tags: 1.8.0
+      execa: 3.3.0
+      mz: 2.7.0
+      ramda: 0.26.1
+      render-help: 0.0.0
+      rimraf: 3.0.0
+      strip-ansi: 6.0.0
+      tape: 4.11.0
+      write-yaml-file: 3.0.1
   packages/cli-outdated:
     dependencies:
       '@pnpm/cli-utils': 'link:../cli-utils'
@@ -1336,6 +1380,7 @@ importers:
   packages/pnpm:
     dependencies:
       '@pnpm/cli-audit': 'link:../cli-audit'
+      '@pnpm/cli-list-and-why': 'link:../cli-list-and-why'
       '@pnpm/cli-outdated': 'link:../cli-outdated'
       '@pnpm/cli-pack-and-publish': 'link:../cli-pack-and-publish'
       '@pnpm/cli-utils': 'link:../cli-utils'
@@ -1349,7 +1394,6 @@ importers:
       '@pnpm/error': 'link:../error'
       '@pnpm/file-reporter': 0.1.0
       '@pnpm/lifecycle': 'link:../lifecycle'
-      '@pnpm/list': 'link:../list'
       '@pnpm/lockfile-file': 'link:../lockfile-file'
       '@pnpm/logger': 3.1.0
       '@pnpm/matcher': 'link:../matcher'
@@ -1450,6 +1494,7 @@ importers:
     specifiers:
       '@pnpm/assert-project': 'workspace:*'
       '@pnpm/cli-audit': 'workspace:0.0.0'
+      '@pnpm/cli-list-and-why': 'workspace:0.0.0'
       '@pnpm/cli-outdated': 'workspace:0.0.0'
       '@pnpm/cli-pack-and-publish': 'workspace:0.0.0'
       '@pnpm/cli-utils': 'workspace:0.0.0'
@@ -1463,7 +1508,6 @@ importers:
       '@pnpm/error': 'workspace:1.0.0'
       '@pnpm/file-reporter': 0.1.0
       '@pnpm/lifecycle': 'workspace:8.0.0'
-      '@pnpm/list': 'workspace:4.0.4'
       '@pnpm/lockfile-file': 'workspace:3.0.1'
       '@pnpm/lockfile-types': 'workspace:1.1.0'
       '@pnpm/logger': 3.1.0
@@ -2716,7 +2760,7 @@ packages:
       integrity: sha512-U5icWpv7YnZYGsN4/cmh3WD2onMY0aJIiTE6+51TwJCttdHvtCYmkBNOobHlXwrJRL0nkH9jH4kD+1FAdMN4Tg==
   /@types/mz/0.0.32:
     dependencies:
-      '@types/node': 12.12.8
+      '@types/node': 12.12.11
     resolution:
       integrity: sha512-cy3yebKhrHuOcrJGkfwNHhpTXQLgmXSv1BX+4p32j+VUQ6aP2eJ5cL7OvGcAQx75fCTFaAIIAKewvqL+iwSd4g==
   /@types/ncp/2.0.3:
@@ -2735,6 +2779,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-RElZIr/7JreF1eY6oD5RF3kpmdcreuQPjg5ri4oQ5g9sq7YWU8HkfB3eH8GwAwxf5OaCh0VPi7r4N/yoTGelrA==
+  /@types/node/12.12.11:
+    resolution:
+      integrity: sha512-O+x6uIpa6oMNTkPuHDa9MhMMehlxLAd5QcOvKRjAFsBVpeFWTOPnXbDvILvFgFFZfQ1xh1EZi1FbXxUix+zpsQ==
   /@types/node/12.12.8:
     resolution:
       integrity: sha512-XLla8N+iyfjvsa0KKV+BP/iGSoTmwxsu5Ci5sM33z9TjohF72DEz95iNvD6pPmemvbQgxAv/909G73gUn8QR7w==
@@ -2773,6 +2820,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-vbzC2BzFn8hE80JG11O0QLoruvtqRIMB7eRpsfMI3pJk6p9zgGi+FEs49m/xvHW1IgibnhEUo8g6rBo0U/xZJg==
+  /@types/ramda/0.26.36:
+    dependencies:
+      ts-toolbelt: 4.10.13
+    dev: true
+    resolution:
+      integrity: sha512-uo22Nf32Cc3EURp9tYlFttY8MVQZ1zoVum+D+yQ2jm4IqQFxDtwCQlP/WMwbuj4ey5kw1rJ7v6OacDszfWiqLA==
   /@types/resolve-from/4.0.0:
     dev: true
     resolution:
@@ -10771,7 +10824,7 @@ packages:
       integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
   /write-file-atomic/2.4.3:
     dependencies:
-      graceful-fs: 4.2.1
+      graceful-fs: 4.2.3
       imurmurhash: 0.1.4
       signal-exit: 3.0.2
     resolution:
